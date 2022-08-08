@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Koulen&family=Permanent+Marker&family=Vujahday+Script&display=swap');
 .container {
   padding: 0 2rem;
 }
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 2rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.image {
+  margin-bottom: 20px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .footer {
@@ -42,16 +49,21 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
 }
-
+.subtitle {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
 .title,
 .description {
   text-align: center;
 }
 
 .description {
-  margin: 4rem 0;
+  margin-top: 30px;
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -88,8 +100,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: rgb(256, 136, 0);
+  border-color: rgb(256, 136, 0);
 }
 
 .card h2 {
@@ -106,6 +118,24 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.technologies {
+  color:grey
+}
+
+.boredGame {
+  font-family: 'Architects Daughter', cursive;
+}
+
+.fridgy {
+  font-family: 'Koulen', sans-serif
+}
+.mixtails {
+  font-family: 'Permanent Marker', sans-serif;
+}
+.sproutsweeper {
+  font-family: 'Vujahday Script', cursive;
 }
 
 @media (max-width: 600px) {
