@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Koulen&family=Permanent+Marker&family=Vujahday+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Koulen&family=Permanent+Marker&family=Jost&family=Vujahday+Script&display=swap');
+
 .container {
   padding: 0 2rem;
+  color: white
 }
 
 .main {
@@ -17,6 +19,7 @@
   margin-bottom: 20px;
   height: 150px;
   border-radius: 50%;
+  border: 3px lightgrey solid
 }
 
 .footer {
@@ -49,7 +52,9 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-family: "Jost", sans-serif;
+  color: #ee5401
 }
 .subtitle {
   margin: 0;
@@ -82,7 +87,7 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .card {
@@ -94,14 +99,15 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  max-width: 400px;
+  min-height: 240px
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: rgb(256, 136, 0);
-  border-color: rgb(256, 136, 0);
+  color: #ee5401;
+  border-color: #ee5401
 }
 
 .card h2 {
@@ -143,4 +149,6 @@
     width: 100%;
     flex-direction: column;
   }
+ 
 }
+
