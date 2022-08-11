@@ -42,30 +42,18 @@ export default function Home({ projects }) {
             <img className={styles.image} src="/me.jpg" />
             <div className={styles.icons}>
               <span className={styles.twitter}>
-                <a
-                  href="https://twitter.com/jamiepantling"
-                  target="_blank"
-                  rel="noopener"
-                >
+                <a href="https://twitter.com/jamiepantling">
                   {" "}
                   <FontAwesomeIcon icon={brands("twitter")} />
                 </a>
               </span>
               <span className={styles.linkedin}>
-                <a
-                  href="https://linkedin.com/in/jamie-pantling"
-                  target="_blank"
-                  rel="noopener"
-                >
+                <a href="https://linkedin.com/in/jamie-pantling">
                   <FontAwesomeIcon icon={brands("linkedin")} />
                 </a>
               </span>
               <span className={styles.github}>
-                <a
-                  href="https://github.com/jamiepantling"
-                  target="_blank"
-                  rel="noopener"
-                >
+                <a href="https://github.com/jamiepantling">
                   <FontAwesomeIcon icon={brands("github")} />
                 </a>
               </span>
@@ -75,7 +63,7 @@ export default function Home({ projects }) {
         <h2 className={styles.subtitle}>I built:</h2>
 
         <div className={styles.grid}>
-          <a href={projects[3].url} target="_blank" rel="noopener">
+          <a href={projects[3].url}>
             <motion.div
               layout
               className={`${styles.card} ${styles.motion}`}
@@ -95,7 +83,7 @@ export default function Home({ projects }) {
               <p className={styles.technologies}>{projects[3].techs}</p>
             </motion.div>
           </a>
-          <a href={projects[1].url} target="_blank" rel="noopener">
+          <a href={projects[1].url}>
             <motion.div
               className={styles.card}
               initial={{ opacity: 0, scale: 0.5 }}
@@ -114,7 +102,7 @@ export default function Home({ projects }) {
               <p className={styles.technologies}>{projects[1].techs}</p>
             </motion.div>
           </a>
-          <a href={projects[2].url} target="_blank" rel="noopener">
+          <a href={projects[2].url}>
             <motion.div
               layout
               className={styles.card}
@@ -134,7 +122,7 @@ export default function Home({ projects }) {
               <p className={styles.technologies}>{projects[2].techs}</p>
             </motion.div>
           </a>
-          <a href={projects[0].url} target="_blank" rel="noopener">
+          <a href={projects[0].url}>
             <motion.div
               className={styles.card}
               initial={{ opacity: 0, scale: 0.5 }}
