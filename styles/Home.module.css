@@ -13,6 +13,7 @@
   height: 300px;
   display: flex;
   align-items: center;
+  font-family: "Jost", sans-serif
   /* background-color: #ee5401; */
 }
 .hey {
@@ -63,7 +64,8 @@
   line-height: 1.15;
   font-size: 30px;
   margin-bottom: 10px;
-  margin-top: 0
+  margin-top: 0;
+  font-family: "Jost", sans-serif
 }
 .code {
   background: #fafafa;
@@ -107,6 +109,7 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+  font-family: "Jost", sans-serif
 }
 
 .icons {
