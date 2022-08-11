@@ -26,5 +26,8 @@
 .title {
     color: #ee5401;
     text-align: left;
-    font-family: "Jost", sans-serif
+    font-family: "Jost", sans-serif;
+}
+.titleContainer {
+    min-width: 200px;
 }
