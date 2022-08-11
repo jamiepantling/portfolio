@@ -33,9 +33,9 @@ export default function Home({ projects }) {
         <div className={styles.introContainer}>
           <div className={styles.description}>
             <div className={styles.descriptionText}>
-              <span className={styles.hey}>Hey, I'm Jamie 👋 </span>
+              <span className={styles.hey}>Hey, I&apos;m Jamie 👋 </span>
               <br />
-              I'm a full-stack developer in Toronto.
+              I&apos;m a full-stack developer in Toronto.
             </div>
           </div>
           <div className={styles.picContainer}>
@@ -45,7 +45,7 @@ export default function Home({ projects }) {
                 <a
                   href="https://twitter.com/jamiepantling"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener"
                 >
                   {" "}
                   <FontAwesomeIcon icon={brands("twitter")} />
@@ -55,7 +55,7 @@ export default function Home({ projects }) {
                 <a
                   href="https://linkedin.com/in/jamie-pantling"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener"
                 >
                   <FontAwesomeIcon icon={brands("linkedin")} />
                 </a>
@@ -64,7 +64,7 @@ export default function Home({ projects }) {
                 <a
                   href="https://github.com/jamiepantling"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener"
                 >
                   <FontAwesomeIcon icon={brands("github")} />
                 </a>
@@ -75,7 +75,7 @@ export default function Home({ projects }) {
         <h2 className={styles.subtitle}>I built:</h2>
 
         <div className={styles.grid}>
-          <a href={projects[3].url} target="_blank" rel="noreferrer">
+          <a href={projects[3].url} target="_blank" rel="noopener">
             <motion.div
               layout
               className={`${styles.card} ${styles.motion}`}
@@ -95,7 +95,7 @@ export default function Home({ projects }) {
               <p className={styles.technologies}>{projects[3].techs}</p>
             </motion.div>
           </a>
-          <a href={projects[1].url} target="_blank" rel="noreferrer">
+          <a href={projects[1].url} target="_blank" rel="noopener">
             <motion.div
               className={styles.card}
               initial={{ opacity: 0, scale: 0.5 }}
@@ -114,7 +114,7 @@ export default function Home({ projects }) {
               <p className={styles.technologies}>{projects[1].techs}</p>
             </motion.div>
           </a>
-          <a href={projects[2].url} target="_blank" rel="noreferrer">
+          <a href={projects[2].url} target="_blank" rel="noopener">
             <motion.div
               layout
               className={styles.card}
@@ -134,7 +134,7 @@ export default function Home({ projects }) {
               <p className={styles.technologies}>{projects[2].techs}</p>
             </motion.div>
           </a>
-          <a href={projects[0].url} target="_blank" rel="noreferrer">
+          <a href={projects[0].url} target="_blank" rel="noopener">
             <motion.div
               className={styles.card}
               initial={{ opacity: 0, scale: 0.5 }}
