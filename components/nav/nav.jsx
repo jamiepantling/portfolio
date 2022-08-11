@@ -8,10 +8,8 @@ export default function Nav() {
                 <Link href={'/'}><h1 className={styles.title}>Jamie Pantling</h1></Link>
             </div>
             
-            <ul className={styles.linksList}>
-                {/* <li className={styles.link}><Link href={'/about'}><a>About</a></Link></li> */}
-                <li className={styles.link}><Link href={'/contact'}><a>Contact</a></Link></li>
-            </ul>
+            <Link className={styles.link} href={'/contact'}>Contact</Link>
+
         </div>
     )
 }

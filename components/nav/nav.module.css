@@ -16,7 +16,6 @@
 }
 
 .link {
-    margin-left: 15px;
     list-style-type: none;
     font-weight: 400;
     text-align: right;
@@ -29,5 +28,5 @@
     font-family: "Jost", sans-serif;
 }
 .titleContainer {
-    min-width: 200px;
+    min-width: 240px;
 }
