@@ -6,10 +6,10 @@ import { useState } from 'react';
 
 export default function About () {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [success, setSuccess] = useState('')
 
     const onSubmit = data => {
         setName(data.name)
@@ -19,6 +19,7 @@ export default function About () {
             method: 'post',
             body: JSON.stringify(data),
           });
+        setSuccess("Message sent. Thanks!")
     }
     return (
         <div className={styles.container}>
@@ -39,6 +40,7 @@ export default function About () {
                         <input className={styles.button} type="submit" />
                     </div>
                 </form>
+                <p className={styles.success}>{success}</p>
             </div>
         </div>
     )
