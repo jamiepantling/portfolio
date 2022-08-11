@@ -5,7 +5,8 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  background-color: rgb(68, 68, 68);
+  background-color: rgb(20,20,20);
+  color: white
 }
 
 a {

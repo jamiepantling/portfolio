@@ -10,10 +10,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    }
+    max-width: 850px;
+    margin: 0 auto;
+    color: white
+}
 
 .link {
-    margin-right: 15px;
+    margin-left: 15px;
     list-style-type: none;
     font-weight: 400;
+    text-align: right;
+}
+.title {
+    color: #ee5401;
+    text-align: left
 }

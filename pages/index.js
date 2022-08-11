@@ -1,20 +1,17 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
-const Project = require("../models/Project");
 import connectMongo from "../utils/connectMongo";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { brands } from '@fortawesome/fontawesome-svg-core/import.macro'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
 import styles from "../styles/Home.module.css";
+const Project = require("../models/Project");
 
 import Nav from "../components/nav/nav";
-// import getProjects from "../api/projects"
 
 export const getStaticProps = async () => {
-
   await connectMongo();
   console.log("CONNECTED TO MONGO");
-  console.log(Project)
+  console.log(Project);
   let projects = await Project.find();
   console.log(JSON.parse(JSON.stringify(projects)));
   return { props: { projects: JSON.parse(JSON.stringify(projects)) } };
@@ -22,7 +19,10 @@ export const getStaticProps = async () => {
 export default function Home({ projects }) {
   return (
     <div className={styles.container}>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      ></link>
       <Head>
         <title>Jamie Pantling</title>
         <link rel="icon" href="/favicon.ico" />
@@ -30,105 +30,120 @@ export default function Home({ projects }) {
       <Nav />
 
       <main className={styles.main}>
-        <img className={styles.image} src="/me.jpg" />
-        <h1 className={styles.title}>Jamie Pantling</h1>
-        <FontAwesomeIcon icon="fa-brands fa-twitter" />
-        <p className={styles.description}>
-          I'm a full-stack developer in Toronto.
-        </p>
-
+        <div className={styles.introContainer}>
+          <div className={styles.description}>
+            <div className={styles.descriptionText}>
+              <span className={styles.hey}>Hey, I'm Jamie 👋 </span>
+              <br />
+              I'm a full-stack developer in Toronto.
+            </div>
+          </div>
+          <div className={styles.picContainer}>
+            <img className={styles.image} src="/me.jpg" />
+            <div className={styles.icons}>
+              <span className={styles.twitter}>
+                <a href="https://twitter.com/jamiepantling" target="_blank">
+                  {" "}
+                  <FontAwesomeIcon icon={brands("twitter")} />
+                </a>
+              </span>
+              <span className={styles.linkedin}>
+                <a
+                  href="https://linkedin.com/in/jamie-pantling"
+                  target="_blank"
+                >
+                  <FontAwesomeIcon icon={brands("linkedin")} />
+                </a>
+              </span>
+              <span className={styles.github}>
+                <a href="https://github.com/jamiepantling" target="_blank">
+                  <FontAwesomeIcon icon={brands("github")} />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
         <h2 className={styles.subtitle}>I built:</h2>
 
         <div className={styles.grid}>
-          <motion.div
-            layout
-            href="https://github.com/jamiepantling/mixtails"
-            className={[styles.card, styles.motion].join(" ")}
-            target="_blank"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.1,
-              ease: [0, 0.71, 0.2, 1.01],
-            }}
-          >
-            <h2>
-              <span className={styles.mixtails}>{projects[3].name}</span>
-            </h2>
-            <p>{projects[3].description}</p>
-            <br />
-            <p className={styles.technologies}>{projects[3].techs}</p>
-          </motion.div>
-          <motion.div
-            href="https://github.com/jamiepantling/bored-game"
-            className={styles.card}
-            target="_blank"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-              ease: [0, 0.71, 0.2, 1.01],
-            }}
-          >
-            <h2>
-              <span className={styles.boredGame}>Bored? Game!</span>
-            </h2>
-            <p>
-              Add, rate and review board games to find the perfect one to play.
-            </p>
-            <br />
-            <p className={styles.technologies}>
-              Express, Mongoose, Node.js, Tailwind{" "}
-            </p>
-          </motion.div>
-
-          <motion.div
-            layout
-            href="https://github.com/ThomasLawlor17/fridgy"
-            className={styles.card}
-            target="_blank"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.3,
-              ease: [0, 0.71, 0.2, 1.01],
-            }}
-          >
-            <h2>
-              <span className={styles.fridgy}>Fridgy</span>
-            </h2>
-            <p>
-              Organise a shared fridge. Tag your food as shared, or "hands off"!
-            </p>
-            <br />
-            <p className={styles.technologies}>Django, PostgreSQL, Tailwind</p>
-          </motion.div>
-
-          <motion.div
-            href="https://github.com/jamiepantling/sproutsweeper"
-            className={styles.card}
-            target="_blank"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.4,
-              ease: [0, 0.71, 0.2, 1.01],
-            }}
-          >
-            <h2>
-              <span className={styles.sproutsweeper}>Sproutsweeper!</span>
-            </h2>
-            <p>
-              Brussels-sprouts-based version of the classic Minesweeper, styled
-              for fans of the 90s.
-            </p>
-            <br />
-            <p className={styles.technologies}>HTML, vanilla CSS, Node.js </p>
-          </motion.div>
+          <a href={projects[3].url} target="_blank">
+            <motion.div
+              layout
+              className={`${styles.card} ${styles.motion}`}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.1,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+            >
+              <h2>
+                <span className={styles.mixtails}>{projects[3].name}</span>
+              </h2>
+              <p>{projects[3].description}</p>
+              <br />
+              <p className={styles.technologies}>{projects[3].techs}</p>
+            </motion.div>
+          </a>
+          <a href={projects[1].url} target="_blank">
+            <motion.div
+              className={styles.card}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+            >
+              <h2>
+                <span className={styles.boredGame}>{projects[1].name}</span>
+              </h2>
+              <p>{projects[1].description}</p>
+              <br />
+              <p className={styles.technologies}>{projects[1].techs}</p>
+            </motion.div>
+          </a>
+          <a href={projects[2].url} target="_blank">
+            <motion.div
+              layout
+              className={styles.card}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+            >
+              <h2>
+                <span className={styles.fridgy}>{projects[2].name}</span>
+              </h2>
+              <p>{projects[2].description}</p>
+              <br />
+              <p className={styles.technologies}>{projects[2].techs}</p>
+            </motion.div>
+          </a>
+          <a href={projects[0].url} target="_blank">
+            <motion.div
+              className={styles.card}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.4,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
+            >
+              <h2>
+                <span className={styles.sproutsweeper}>{projects[0].name}</span>
+              </h2>
+              <p>{projects[0].description}</p>
+              <br />
+              <p className={styles.technologies}>{projects[0].techs}</p>
+            </motion.div>
+          </a>
         </div>
       </main>
     </div>

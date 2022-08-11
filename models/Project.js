@@ -6,7 +6,8 @@ const projectSchema = new Schema({
     name: String,
     description: String,
     class: String,
-    techs: String
+    techs: String,
+    url: String
   });
 
 // module.exports = mongoose.model('Project', projectSchema);
