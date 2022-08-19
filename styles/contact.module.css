@@ -8,29 +8,35 @@
  align-items: center;
  font-family: "Jost", sans-serif;
 }
-  .inputContainer {
-    
-    display: flex;
-    flex-direction: column;
-  }
+.inputContainer {
+  
+  display: flex;
+  flex-direction: column;
+}
+.input {
+  margin-bottom: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-family: "Jost", sans-serif;
+  font-size: medium;
+}
+.button {
+  width: 100px;
+  border: none;
+  height: 30px;
+  background-color: #ee5401;
+  color: white;
+  font-weight: bold;
+  cursor:pointer;
+}
+.textarea {
+  min-height: 100px;
+}
+
+@media (min-width: 700px) {
   .input {
-    margin-bottom: 10px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px 10px;
-    font-family: "Jost", sans-serif;
-    font-size: medium;
+    width: 500px
   }
-  .button {
-    width: 100px;
-    border: none;
-    height: 30px;
-    background-color: #ee5401;
-    color: white;
-    font-weight: bold;
-    cursor:pointer;
-  }
-  .textarea {
-    min-height: 100px;
-  }
+}

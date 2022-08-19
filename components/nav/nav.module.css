@@ -20,12 +20,14 @@
     font-weight: 400;
     text-align: right;
     font-family: "Jost", sans-serif;
-    font-size: x-large
+    font-size: x-large;
+
 }
 .title {
     color: #ee5401;
     text-align: left;
     font-family: "Jost", sans-serif;
+    cursor: pointer;
 }
 .titleContainer {
     min-width: 240px;
