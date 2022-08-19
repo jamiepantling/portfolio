@@ -21,9 +21,11 @@ export const getStaticProps = async () => {
 
 export default function Home({ projects }) {
   const [showModal, setShowModal] = useState(false);
-  useEffect(() => {
-    console.log(showModal);
-  }, [showModal]);
+  const [showModal0, setShowModal0] = useState(false);
+  const [showModal1, setShowModal1] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
+  const [showModal3, setShowModal3] = useState(false);
+
   return (
     <div className={styles.container}>
       <link
@@ -37,13 +39,17 @@ export default function Home({ projects }) {
       <Nav />
 
       <main className={styles.main}>
-        <motion.div layout className={styles.introContainer} initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}>
+        <motion.div
+          layout
+          className={styles.introContainer}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
           <div className={styles.description}>
             <div className={styles.descriptionText}>
               <span className={styles.hey}>Hey, I&apos;m Jamie 👋 </span>
@@ -82,7 +88,7 @@ export default function Home({ projects }) {
             <Modal
               onClose={() => setShowModal(false)}
               show={showModal}
-              title="Hey there"
+              name="Hey there"
             >
               Hello from the modal!
             </Modal>
@@ -90,8 +96,9 @@ export default function Home({ projects }) {
         </div>
 
         <div className={styles.grid}>
-          <a href={projects[3].url}>
+          <div id="container-0">
             <motion.div
+              id="motion-0"
               layout
               className={`${styles.card} ${styles.motion}`}
               initial={{ opacity: 0, scale: 0.5 }}
@@ -103,15 +110,38 @@ export default function Home({ projects }) {
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.9 }}
+              onClick={() => {
+                setShowModal0(true);
+                console.log("clicked!");
+              }}
             >
-              <h2>
-                <span className={styles.mixtails}>{projects[3].name}</span>
+              <h2 id="h2-0">
+                <span id="name-0" className={styles.mixtails}>
+                  {projects[3].name}
+                </span>
               </h2>
-              <p>{projects[3].description}</p>
+              <p id="description-0">{projects[3].description}</p>
               <br />
-              <p className={styles.technologies}>{projects[3].techs}</p>
+              <p id="techs-0" className={styles.technologies}>
+                {projects[3].techs}
+              </p>
             </motion.div>
-          </a>
+            {showModal0 && (
+              <Modal
+                onClose={() => setShowModal0(false)}
+                name={projects[3].name}
+                longDescription={projects[3].longDescription}
+                openerIDs={[
+                  "description-0",
+                  "techs-0",
+                  "name-0",
+                  "h2-0",
+                  "container-0",
+                  "motion-0",
+                ]}
+              />
+            )}
+          </div>
           <a href={projects[1].url}>
             <motion.div
               className={styles.card}

@@ -4,7 +4,17 @@ import styled from "styled-components";
 import styles from "./modal.module.css";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Modal = ({ onClose, children, title }) => {
+const Modal = ({
+  onClose,
+  children,
+  title,
+  longDescription,
+  url,
+  deployedUrl,
+  name,
+  imageName,
+  openerIDs,
+}) => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   const modalWrapperRef = React.useRef();
@@ -12,6 +22,7 @@ const Modal = ({ onClose, children, title }) => {
   const backDropHandler = (e) => {
     if (
       e.target.id != "modal_button" &&
+      !openerIDs.includes(e.target.id) &&
       !modalWrapperRef?.current?.contains(e.target)
     ) {
       console.log("backdrop handler! ", e.target);
@@ -49,12 +60,24 @@ const Modal = ({ onClose, children, title }) => {
           <StyledModalWrapper ref={modalWrapperRef}>
             <StyledModal>
               <StyledModalHeader>
+                {name && <StyledModalTitle>{name}</StyledModalTitle>}
                 <a href="#" onClick={handleCloseClick}>
                   x
                 </a>
               </StyledModalHeader>
-              {title && <StyledModalTitle>{title}</StyledModalTitle>}
-              <StyledModalBody>{children}</StyledModalBody>
+
+              <StyledModalBody>
+                <div id={styles["app-info-container"]}>
+                  <div id={styles["screenshot"]}></div>
+                  <div id={styles["long-desription"]}>{longDescription}</div>
+                  <div id={styles["button-container"]}>
+                    <motion.button id={styles["github-button"]}></motion.button>
+                    <motion.button
+                      id={styles["deployed-button"]}
+                    ></motion.button>
+                  </div>
+                </div>
+              </StyledModalBody>
             </StyledModal>
           </StyledModalWrapper>
         </StyledModalOverlay>
@@ -74,7 +97,7 @@ const Modal = ({ onClose, children, title }) => {
 
 const StyledModalBody = styled.div`
   padding-top: 10px;
-  color: black
+  color: black;
 `;
 
 const StyledModalHeader = styled.div`
@@ -82,7 +105,7 @@ const StyledModalHeader = styled.div`
   justify-content: flex-end;
   font-size: 25px;
   color: black;
-  font-family: helvetica
+  font-family: helvetica;
 `;
 
 const StyledModalWrapper = styled.div`
