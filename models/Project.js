@@ -7,7 +7,9 @@ const projectSchema = new Schema({
     description: String,
     class: String,
     techs: String,
-    url: String
+    url: String,
+    longDescription: String,
+    deployedUrl: String,
   });
 
 // module.exports = mongoose.model('Project', projectSchema);
