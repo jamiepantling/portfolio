@@ -4,7 +4,9 @@ import connectMongo from "../utils/connectMongo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
 import styles from "../styles/Home.module.css";
+import Modal from "../components/modal/modal";
 const Project = require("../models/Project");
+import { useEffect, useState } from "react";
 
 import Nav from "../components/nav/nav";
 
@@ -16,7 +18,12 @@ export const getStaticProps = async () => {
   console.log(JSON.parse(JSON.stringify(projects)));
   return { props: { projects: JSON.parse(JSON.stringify(projects)) } };
 };
+
 export default function Home({ projects }) {
+  const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    console.log(showModal);
+  }, [showModal]);
   return (
     <div className={styles.container}>
       <link
@@ -61,6 +68,20 @@ export default function Home({ projects }) {
           </div>
         </div>
         <h2 className={styles.subtitle}>I built:</h2>
+        <div>
+          <button id="modal_button" onClick={() => setShowModal(true)}>
+            Open Modal
+          </button>
+          {showModal && (
+            <Modal
+              onClose={() => setShowModal(false)}
+              show={showModal}
+              title="Hey there"
+            >
+              Hello from the modal!
+            </Modal>
+          )}
+        </div>
 
         <div className={styles.grid}>
           <a href={projects[3].url}>
