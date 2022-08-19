@@ -30,7 +30,13 @@ export default function Home({ projects }) {
       <Nav />
 
       <main className={styles.main}>
-        <div className={styles.introContainer}>
+        <motion.div className={styles.introContainer} initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}>
           <div className={styles.description}>
             <div className={styles.descriptionText}>
               <span className={styles.hey}>Hey, I&apos;m Jamie 👋 </span>
@@ -59,7 +65,7 @@ export default function Home({ projects }) {
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
         <h2 className={styles.subtitle}>I built:</h2>
 
         <div className={styles.grid}>
