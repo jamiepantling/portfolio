@@ -30,7 +30,7 @@ export default function Home({ projects }) {
       <Nav />
 
       <main className={styles.main}>
-        <motion.div className={styles.introContainer} initial={{ opacity: 0, scale: 0.5 }}
+        <motion.div layout className={styles.introContainer} initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           duration: 0.8,
@@ -80,6 +80,8 @@ export default function Home({ projects }) {
                 delay: 0.1,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
             >
               <h2>
                 <span className={styles.mixtails}>{projects[3].name}</span>
@@ -99,6 +101,8 @@ export default function Home({ projects }) {
                 delay: 0.2,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
             >
               <h2>
                 <span className={styles.boredGame}>{projects[1].name}</span>
@@ -119,6 +123,8 @@ export default function Home({ projects }) {
                 delay: 0.3,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
             >
               <h2>
                 <span className={styles.fridgy}>{projects[2].name}</span>
@@ -138,6 +144,8 @@ export default function Home({ projects }) {
                 delay: 0.4,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
             >
               <h2>
                 <span className={styles.sproutsweeper}>{projects[0].name}</span>
