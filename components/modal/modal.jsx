@@ -5,6 +5,7 @@ import styles from "./modal.module.css";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Modal = ({
+  show,
   onClose,
   children,
   title,
@@ -21,11 +22,9 @@ const Modal = ({
 
   const backDropHandler = (e) => {
     if (
-      e.target.id != "modal_button" &&
-      !openerIDs.includes(e.target.id) &&
       !modalWrapperRef?.current?.contains(e.target)
     ) {
-      console.log("backdrop handler! ", e.target);
+      console.log("backdrop handler! ", e.target, show);
       onClose();
     }
   };
@@ -33,7 +32,9 @@ const Modal = ({
   useEffect(() => {
     setIsBrowser(true);
     window.addEventListener("click", backDropHandler);
-    return () => window.removeEventListener("click", backDropHandler);
+    return () => {
+      window.removeEventListener("click", backDropHandler);
+    }
   }, []);
 
   const handleCloseClick = (e) => {

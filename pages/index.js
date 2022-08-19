@@ -81,13 +81,12 @@ export default function Home({ projects }) {
         </motion.div>
         <h2 className={styles.subtitle}>I built:</h2>
         <div>
-          <button id="modal_button" onClick={() => setShowModal(true)}>
+          <button id="modal_button" onClick={(e) => { e.stopPropagation(); setShowModal(true);}}>
             Open Modal
           </button>
           {showModal && (
             <Modal
               onClose={() => setShowModal(false)}
-              show={showModal}
               name="Hey there"
             >
               Hello from the modal!
@@ -96,9 +95,9 @@ export default function Home({ projects }) {
         </div>
 
         <div className={styles.grid}>
-          <div id="container-0">
+          <div>
             <motion.div
-              id="motion-0"
+
               layout
               className={`${styles.card} ${styles.motion}`}
               initial={{ opacity: 0, scale: 0.5 }}
@@ -112,17 +111,16 @@ export default function Home({ projects }) {
               whileTap={{ scale: 0.9 }}
               onClick={() => {
                 setShowModal0(true);
-                console.log("clicked!");
               }}
             >
-              <h2 id="h2-0">
-                <span id="name-0" className={styles.mixtails}>
+              <h2>
+                <span className={styles.mixtails}>
                   {projects[3].name}
                 </span>
               </h2>
-              <p id="description-0">{projects[3].description}</p>
+              <p >{projects[3].description}</p>
               <br />
-              <p id="techs-0" className={styles.technologies}>
+              <p className={styles.technologies}>
                 {projects[3].techs}
               </p>
             </motion.div>
@@ -131,14 +129,7 @@ export default function Home({ projects }) {
                 onClose={() => setShowModal0(false)}
                 name={projects[3].name}
                 longDescription={projects[3].longDescription}
-                openerIDs={[
-                  "description-0",
-                  "techs-0",
-                  "name-0",
-                  "h2-0",
-                  "container-0",
-                  "motion-0",
-                ]}
+      
               />
             )}
           </div>
