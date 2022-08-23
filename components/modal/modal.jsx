@@ -193,7 +193,7 @@ const Modal = (props) => {
                     <div className={styles.screenshot}>
                       <img
                         className={styles.image}
-                        src={`../../${props.style}.png`}
+                        src={`../../${props.style}.jpg`}
                       />
                     </div>
                     <div className={styles.descTechsContainer}>
