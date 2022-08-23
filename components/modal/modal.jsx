@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Modal = (props) => {
-  console.log(props.font);
+
   const [isBrowser, setIsBrowser] = useState(false);
 
   const modalWrapperRef = React.useRef();
@@ -32,6 +32,7 @@ const Modal = (props) => {
   };
   const GameName = styled.span`
     font-family: ${props.font || "cursive"};
+    font-size:  ${props.style === "sproutsweeper" || props.style === "boredgame" ? "large" : "x-large"}
   `;
 
 
