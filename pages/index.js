@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import connectMongo from "../utils/connectMongo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
@@ -43,9 +43,17 @@ export default function Home({ projects }) {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: 0.8,
-            delay: 0,
-            ease: [0, 0.71, 0.2, 1.01],
+            default: {
+              duration: 0.9,
+              ease: [0, 0.71, 0.2, 1.01],
+            },
+            scale: {
+              type: "spring",
+              damping: 10,
+              stiffness: 70,
+              restDelta: 0.001,
+              duration: 0.05,
+            },
           }}
         >
           <div className={styles.description}>
@@ -105,18 +113,21 @@ export default function Home({ projects }) {
               <br />
               <p className={styles.technologies}>{projects[3].techs}</p>
             </motion.div>
-            {showModal0 && (
-              <Modal
-                onClose={() => setShowModal0(false)}
-                name={projects[3].name}
-                longDescription={projects[3].longDescription}
-                url={projects[3].url}
-                deployedUrl={projects[3].deployedUrl}
-                techs={projects[3].techs}
-                style={projects[3].style}
-                font={projects[3].font}
-              />
-            )}
+            <AnimatePresence>
+              {showModal0 && (
+                <Modal
+                  key="modal"
+                  onClose={() => setShowModal0(false)}
+                  name={projects[3].name}
+                  longDescription={projects[3].longDescription}
+                  url={projects[3].url}
+                  deployedUrl={projects[3].deployedUrl}
+                  techs={projects[3].techs}
+                  style={projects[3].style}
+                  font={projects[3].font}
+                />
+              )}
+            </AnimatePresence>
           </div>
           <div>
             <motion.div
@@ -143,6 +154,7 @@ export default function Home({ projects }) {
               <br />
               <p className={styles.technologies}>{projects[1].techs}</p>
             </motion.div>
+            <AnimatePresence>
             {showModal1 && (
               <Modal
                 onClose={() => setShowModal1(false)}
@@ -155,6 +167,7 @@ export default function Home({ projects }) {
                 font={projects[1].font}
               />
             )}
+            </AnimatePresence>
           </div>
           <div>
             <motion.div
@@ -181,6 +194,7 @@ export default function Home({ projects }) {
               <br />
               <p className={styles.technologies}>{projects[2].techs}</p>
             </motion.div>
+            <AnimatePresence>
             {showModal2 && (
               <Modal
                 onClose={() => setShowModal2(false)}
@@ -193,6 +207,7 @@ export default function Home({ projects }) {
                 font={projects[2].font}
               />
             )}
+            </AnimatePresence>
           </div>
           <div>
             <motion.div
@@ -219,6 +234,7 @@ export default function Home({ projects }) {
               <br />
               <p className={styles.technologies}>{projects[0].techs}</p>
             </motion.div>
+            <AnimatePresence>
             {showModal3 && (
               <Modal
                 onClose={() => setShowModal3(false)}
@@ -231,6 +247,7 @@ export default function Home({ projects }) {
                 font={projects[0].font}
               />
             )}
+            </AnimatePresence>
           </div>
         </div>
       </main>

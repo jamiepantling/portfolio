@@ -37,18 +37,16 @@ const Modal = (props) => {
 
 
   const modalContent = (
-    <AnimatePresence>
+
       <motion.div
         key="modal"
         className={`${styles.card}`}
         layout
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.95 }}
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1}}
         exit={{ opacity: 0 }}
         transition={{
-          duration: 0.6,
-          delay: 0.1,
-          ease: [0, 0.71, 0.2, 1.01],
+            duration: 0.2,
         }}
       >
         <div className={styles.modalOverlay}>
@@ -112,7 +110,7 @@ const Modal = (props) => {
           </div>
         </div>
       </motion.div>
-    </AnimatePresence>
+
   );
 
   if (isBrowser) {
