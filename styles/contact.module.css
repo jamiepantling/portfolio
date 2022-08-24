@@ -20,7 +20,7 @@
   border-radius: 4px;
   padding: 10px 10px;
   font-family: "Jost", sans-serif;
-  font-size: medium;
+  font-size: 20px;
 }
 .button {
   width: 100px;
@@ -30,6 +30,9 @@
   color: white;
   font-weight: bold;
   cursor:pointer;
+  font-size: 20px;
+  border-radius: 3px;
+  font-family: 'Jost', sans-serif;
 }
 .textarea {
   min-height: 100px;
