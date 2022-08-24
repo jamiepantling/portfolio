@@ -1,4 +1,5 @@
 import styles from "../styles/contact.module.css";
+import Head from "next/head";
 import Nav from "../components/nav/nav";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
