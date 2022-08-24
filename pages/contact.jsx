@@ -1,4 +1,5 @@
 import styles from "../styles/contact.module.css";
+import Head from "next/head";
 import Nav from "../components/nav/nav";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -27,7 +28,12 @@ export default function About() {
     setSuccess("Message sent. Thanks!");
   };
   return (
+    
     <div className={styles.container}>
+      <Head>
+        <title>Jamie Pantling</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Nav />
       <motion.div
         className={styles.contactContainer}
