@@ -123,6 +123,7 @@
 .githubButton {
   background-color: lightgray;
   border: 2px solid #ee5401;
+  color: black
 }
 
 .deployedButton {
