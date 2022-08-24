@@ -51,16 +51,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: lightgray;
   font-size: large;
   cursor: pointer;
   color: white;
   background-color: #ee5401;
+  border: 1px solid white;
   width: 24px;
   height: 24px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px grey;
-  padding-bottom: 4px
+  /* padding-bottom: 4px */
 }
 
 .appInfoContainer {

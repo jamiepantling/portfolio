@@ -4,7 +4,7 @@ import styled from "styled-components";
 import styles from "./modal.module.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { brands, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Modal = (props) => {
 
@@ -63,7 +63,7 @@ const Modal = (props) => {
                   className={styles.x}
                   onClick={handleCloseClick}
                 >
-                  <p>x</p>
+                <FontAwesomeIcon icon={solid("xmark")} />
                 </motion.button>
               </div>
 
