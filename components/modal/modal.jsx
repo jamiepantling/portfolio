@@ -26,6 +26,15 @@ const Modal = (props) => {
     };
   }, []);
 
+  useEffect(() => {
+    const close = (e) => {
+      if(e.key === 'Escape'){
+        props.onClose()
+      }
+    }
+    window.addEventListener('keydown', close)
+  return () => window.removeEventListener('keydown', close)
+},[])
   const handleCloseClick = (e) => {
     e.preventDefault();
     props.onClose();
