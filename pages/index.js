@@ -88,7 +88,7 @@ export default function Home({ projects }) {
         <div className={styles.grid}>
           {projects.map((project) => {
             return (
-              <div>
+              <div key={project.order}>
                 <motion.div
                   layout
                   className={`${styles.card} ${styles.motion}`}
