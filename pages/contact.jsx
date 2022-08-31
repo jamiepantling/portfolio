@@ -2,8 +2,9 @@ import styles from "../styles/contact.module.css";
 import Head from "next/head";
 import Nav from "../components/nav/nav";
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
+import toast from "../components/toast/toast";
 
 export default function Contact() {
   const {
@@ -17,10 +18,6 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
 
-  // useEffect() {
-    
-  // }
-
   const onSubmit = (data) => {
     setName(data.name);
     setEmail(data.email);
@@ -29,10 +26,19 @@ export default function Contact() {
       method: "post",
       body: JSON.stringify(data),
     });
-    setSuccess("Message sent. Thanks!");
+    notify("success", "👍 Thanks for your message!");
+    // setSuccess("Message sent. Thanks!");
   };
+
+  const notify = useCallback((type, message) => {
+    toast({ type, message });
+  }, []);
+
+  const dismiss = useCallback(() => {
+    toast.dismiss();
+  }, []);
+
   return (
-    
     <div className={styles.container}>
       <Head>
         <title>Jamie Pantling</title>

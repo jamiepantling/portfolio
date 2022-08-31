@@ -1,0 +1,8 @@
+.toastContainer {
+    display: flex
+}
+.toast {
+    flex-grow: 1;
+    font-size: 15;
+    padding: 8px 12px;
+}
