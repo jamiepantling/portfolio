@@ -2,10 +2,10 @@ import styles from "../styles/contact.module.css";
 import Head from "next/head";
 import Nav from "../components/nav/nav";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function About() {
+export default function Contact() {
   const {
     register,
     handleSubmit,
@@ -16,6 +16,10 @@ export default function About() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
+
+  // useEffect() {
+    
+  // }
 
   const onSubmit = (data) => {
     setName(data.name);

@@ -10,7 +10,8 @@ const projectSchema = new Schema({
     url: String,
     longDescription: String,
     deployedUrl: String,
-    font: String
+    font: String,
+    order: Number
   });
 
 // module.exports = mongoose.model('Project', projectSchema);
