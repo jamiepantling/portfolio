@@ -64,22 +64,28 @@ export default function Home({ projects }) {
           <div className={styles.picContainer}>
             <img className={styles.image} src="/me.jpg" />
             <div className={styles.icons}>
-              <span className={styles.twitter}>
+              <motion.div className={styles.twitter}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}>
                 <a href="https://twitter.com/jamiepantling">
                   {" "}
                   <FontAwesomeIcon icon={brands("twitter")} />
                 </a>
-              </span>
-              <span className={styles.linkedin}>
+              </motion.div>
+              <motion.div className={styles.linkedin}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}>
                 <a href="https://linkedin.com/in/jamie-pantling">
                   <FontAwesomeIcon icon={brands("linkedin")} />
                 </a>
-              </span>
-              <span className={styles.github}>
+              </motion.div>
+              <motion.div className={styles.github}
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}>
                 <a href="https://github.com/jamiepantling">
                   <FontAwesomeIcon icon={brands("github")} />
                 </a>
-              </span>
+              </motion.div>
             </div>
           </div>
         </motion.div>
