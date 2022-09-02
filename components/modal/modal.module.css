@@ -9,7 +9,7 @@
   width: 100%;
   border-radius: 5px;
   padding: 15px 15px 5px 15px;
-  border: 2px solid #ee5401;
+  border: 2px solid var(--main-orange);
   min-height: 340px
 }
 
@@ -56,7 +56,7 @@
   font-size: large;
   cursor: pointer;
   color: white;
-  background-color: #ee5401;
+  background-color: var(--main-orange);
   border: 1px solid white;
   width: 24px;
   height: 24px;
@@ -122,7 +122,7 @@
 
 .githubButton {
   background-color: lightgray;
-  border: 2px solid #ee5401;
+  border: 2px solid var(--main-orange);
   color: black
 }
 

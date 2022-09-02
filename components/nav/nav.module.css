@@ -24,7 +24,7 @@
 
 }
 .title {
-    color: #ee5401;
+    color: var(--main-orange);
     text-align: left;
     font-family: "Jost", sans-serif;
     cursor: pointer;

@@ -64,24 +64,30 @@ export default function Home({ projects }) {
           <div className={styles.picContainer}>
             <img className={styles.image} src="/me.jpg" />
             <div className={styles.icons}>
-              <motion.div className={styles.twitter}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}>
+              <motion.div
+                className={styles.twitter}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <a href="https://twitter.com/jamiepantling">
                   {" "}
                   <FontAwesomeIcon icon={brands("twitter")} />
                 </a>
               </motion.div>
-              <motion.div className={styles.linkedin}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}>
+              <motion.div
+                className={styles.linkedin}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <a href="https://linkedin.com/in/jamie-pantling">
                   <FontAwesomeIcon icon={brands("linkedin")} />
                 </a>
               </motion.div>
-              <motion.div className={styles.github}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}>
+              <motion.div
+                className={styles.github}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <a href="https://github.com/jamiepantling">
                   <FontAwesomeIcon icon={brands("github")} />
                 </a>
@@ -105,7 +111,7 @@ export default function Home({ projects }) {
                     delay: 0.1,
                     ease: [0, 0.71, 0.2, 1.01],
                   }}
-                  style={{ }}
+                  style={{}}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={(e) => {

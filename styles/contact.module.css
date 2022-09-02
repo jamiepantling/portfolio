@@ -1,15 +1,13 @@
-
 .container {
   padding: 0 2rem;
 }
 .contactContainer {
- display: flex;
- flex-direction: column;
- align-items: center;
- font-family: "Jost", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Jost", sans-serif;
 }
 .inputContainer {
-  
   display: flex;
   flex-direction: column;
 }
@@ -26,13 +24,13 @@
   width: 100px;
   border: none;
   height: 30px;
-  background-color: #ee5401;
+  background-color: var(--main-orange);
   color: white;
   font-weight: bold;
-  cursor:pointer;
+  cursor: pointer;
   font-size: 20px;
   border-radius: 3px;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
 }
 .textarea {
   min-height: 100px;
@@ -40,6 +38,6 @@
 
 @media (min-width: 700px) {
   .input {
-    width: 500px
+    width: 500px;
   }
 }

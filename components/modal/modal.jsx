@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { brands, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Modal = (props) => {
-
   const [isBrowser, setIsBrowser] = useState(false);
 
   const modalWrapperRef = React.useRef();
@@ -28,98 +27,97 @@ const Modal = (props) => {
 
   useEffect(() => {
     const close = (e) => {
-      if(e.key === 'Escape'){
-        props.onClose()
+      if (e.key === "Escape") {
+        props.onClose();
       }
-    }
-    window.addEventListener('keydown', close)
-  return () => window.removeEventListener('keydown', close)
-},[])
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
   const handleCloseClick = (e) => {
     e.preventDefault();
     props.onClose();
   };
   const GameName = styled.span`
     font-family: ${props.font || "cursive"};
-    font-size:  ${props.style === "sproutsweeper" || props.style === "boredgame" ? "large" : "x-large"}
+    font-size: ${props.style === "sproutsweeper" || props.style === "boredgame"
+      ? "large"
+      : "x-large"};
   `;
 
-
   const modalContent = (
-
-      <motion.div
-        key="modal"
-        className={`${styles.card}`}
-        layout
-        initial={{ opacity: 0}}
-        animate={{ opacity: 1}}
-        exit={{ opacity: 0 }}
-        transition={{
-            duration: 0.2,
-        }}
-      >
-        <div className={styles.modalOverlay}>
-          <div ref={modalWrapperRef} className={styles.modalWrapper}>
-            <div className={styles.modal}>
-              <div className={styles.modalHeader}>
-                <div></div>
-                <div className={styles.modalTitle}>
-                  <GameName className={props.style}>{props.name}</GameName>
-                </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.9 }}
-                  className={styles.x}
-                  onClick={handleCloseClick}
-                >
-                <FontAwesomeIcon icon={solid("xmark")} />
-                </motion.button>
+    <motion.div
+      key="modal"
+      className={`${styles.card}`}
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{
+        duration: 0.2,
+      }}
+    >
+      <div className={styles.modalOverlay}>
+        <div ref={modalWrapperRef} className={styles.modalWrapper}>
+          <div className={styles.modal}>
+            <div className={styles.modalHeader}>
+              <div></div>
+              <div className={styles.modalTitle}>
+                <GameName className={props.style}>{props.name}</GameName>
               </div>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.9 }}
+                className={styles.x}
+                onClick={handleCloseClick}
+              >
+                <FontAwesomeIcon icon={solid("xmark")} />
+              </motion.button>
+            </div>
 
-              <div className={styles.modalBody}>
-                <div className={styles.appInfoContainer}>
-                  <div className={styles.imageDescContainer}>
-                    <div className={styles.screenshot}>
-                      <img
-                        className={styles.image}
-                        src={`../../${props.style}.jpg`}
-                      />
-                    </div>
-                    <div className={styles.descTechsContainer}>
-                      <div className={styles.longDescription}>
-                        {props.longDescription}
-                      </div>
-                      <div className={styles.techs}>{props.techs}</div>
-                    </div>
+            <div className={styles.modalBody}>
+              <div className={styles.appInfoContainer}>
+                <div className={styles.imageDescContainer}>
+                  <div className={styles.screenshot}>
+                    <img
+                      className={styles.image}
+                      src={`../../${props.style}.jpg`}
+                    />
                   </div>
+                  <div className={styles.descTechsContainer}>
+                    <div className={styles.longDescription}>
+                      {props.longDescription}
+                    </div>
+                    <div className={styles.techs}>{props.techs}</div>
+                  </div>
+                </div>
 
-                  <div className={styles.buttonContainer}>
-                    <a href={props.url}>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.9 }}
-                        className={`${styles.githubButton} ${styles.button}`}
-                      >
-                        <FontAwesomeIcon icon={brands("github")} /> GitHub{" "}
-                      </motion.button>
-                    </a>
-                    <a href={props.deployedUrl}>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.9 }}
-                        className={`${styles.deployedButton} ${styles.button}`}
-                      >
-                        <GameName>{props.name}</GameName>
-                      </motion.button>
-                    </a>
-                  </div>
+                <div className={styles.buttonContainer}>
+                  <a href={props.url}>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.9 }}
+                      className={`${styles.githubButton} ${styles.button}`}
+                    >
+                      <FontAwesomeIcon icon={brands("github")} /> GitHub{" "}
+                    </motion.button>
+                  </a>
+                  <a href={props.deployedUrl}>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.9 }}
+                      className={`${styles.deployedButton} ${styles.button}`}
+                    >
+                      <GameName>{props.name}</GameName>
+                    </motion.button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </motion.div>
-
+      </div>
+    </motion.div>
   );
 
   if (isBrowser) {
@@ -131,6 +129,5 @@ const Modal = (props) => {
     return null;
   }
 };
-
 
 export default Modal;
