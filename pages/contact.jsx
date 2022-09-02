@@ -2,7 +2,7 @@ import styles from "../styles/contact.module.css";
 import Head from "next/head";
 import Nav from "../components/nav/nav";
 import { useForm } from "react-hook-form";
-import { useEffect, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import toast from "../components/toast/toast";
 
@@ -10,7 +10,6 @@ export default function Contact() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const [name, setName] = useState("");
@@ -25,9 +24,11 @@ export default function Contact() {
     fetch("./api/contact", {
       method: "post",
       body: JSON.stringify(data),
-    });
-    notify("success", "👍 Thanks for your message!");
-    // setSuccess("Message sent. Thanks!");
+    }).then((response) =>
+      response.status == 200
+        ? notify("success", "👍 Thanks for your message!")
+        : notify("error", "Sorry, there's been an error. Please get in touch on LinkedIn or Twitter.") 
+    );
   };
 
   const notify = useCallback((type, message) => {
