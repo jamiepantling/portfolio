@@ -99,6 +99,7 @@ export default function Home({ projects }) {
                     delay: 0.1,
                     ease: [0, 0.71, 0.2, 1.01],
                   }}
+                  style={{ }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={(e) => {

@@ -1,7 +1,5 @@
-
 .container {
   padding: 0 2rem;
-
 }
 
 .description {
@@ -14,7 +12,7 @@
   height: 300px;
   display: flex;
   align-items: center;
-  font-family: "Jost", sans-serif
+  font-family: "Jost", sans-serif;
 }
 .hey {
   font-size: 60px;
@@ -24,12 +22,11 @@
   height: 300px;
   width: 300px;
   border-radius: 50%;
-
 }
-.introContainer  {
+.introContainer {
   display: flex;
   margin: 0 auto 20px auto;
-  justify-content: space-between;;
+  justify-content: space-between;
 }
 .main {
   min-height: 100vh;
@@ -58,14 +55,14 @@
   line-height: 1.15;
   font-size: 4rem;
   font-family: "Jost", sans-serif;
-  color: #ee5401
+  color: #ee5401;
 }
 .subtitle {
   line-height: 1.15;
   font-size: 30px;
   margin-bottom: 10px;
   margin-top: 0;
-  font-family: "Jost", sans-serif
+  font-family: "Jost", sans-serif;
 }
 .code {
   background: #fafafa;
@@ -98,8 +95,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #ee5401;
-  border-color: #ee5401
+  color: var(--main-orange);
+  border-color: var(--main-orange);
 }
 .card h2 {
   margin: 0 0 1rem 0;
@@ -110,7 +107,7 @@
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
-  font-family: "Jost", sans-serif
+  font-family: "Jost", sans-serif;
 }
 
 .icons {
@@ -130,27 +127,27 @@
 }
 .linkedin {
   margin-right: 15px;
-  color: rgb(10, 103, 194)
+  color: rgb(10, 103, 194);
 }
 .github {
-  color: rgb(240, 246, 252)
+  color: rgb(240, 246, 252);
 }
 .technologies {
-  color:grey
+  color: grey;
 }
 
 .boredGame {
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
 }
 
 .fridgy {
-  font-family: 'Koulen', sans-serif
+  font-family: "Koulen", sans-serif;
 }
 .mixtails {
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: "Permanent Marker", sans-serif;
 }
 .sproutsweeper {
-  font-family: 'Vujahday Script', cursive;
+  font-family: "Vujahday Script", cursive;
 }
 @media (max-width: 810px) {
   .hey {
@@ -183,7 +180,7 @@
     flex-direction: column;
   }
   .hey {
-    font-size: 30px
+    font-size: 30px;
   }
   .description {
     font-size: 25px;
@@ -191,12 +188,10 @@
     margin-bottom: 10px;
     text-align: center;
     width: 300px;
-    height: 150px
+    height: 150px;
   }
   .introContainer {
     flex-direction: column;
     align-items: center;
   }
-  
 }
-
