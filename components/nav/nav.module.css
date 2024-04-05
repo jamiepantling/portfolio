@@ -1,34 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 .linksList {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.navbarContainer {
+  position: sticky;
+  background-color: var(--base);
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 850px;
-    margin: 0 auto;
-    color: white
+  display: flex;
+  padding: 0 clamp(1rem, 5vw, 2rem);
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+
+  color: var(--black);
+  background-color: var(--base);
+  width: 100%;
 }
 
 .link {
-    list-style-type: none;
-    font-weight: 400;
-    text-align: right;
-    font-family: "Jost", sans-serif;
-    font-size: x-large;
-
+  list-style-type: none;
+  font-weight: 400;
+  text-align: right;
+  font-family: 'Jost', sans-serif;
+  font-size: x-large;
 }
 .title {
-    color: var(--main-orange);
-    text-align: left;
-    font-family: "Jost", sans-serif;
-    cursor: pointer;
+  color: var(--main-orange);
+  text-align: left;
+  font-family: 'Jost', sans-serif;
+  cursor: pointer;
 }
 .titleContainer {
-    min-width: 240px;
+  min-width: 240px;
 }

@@ -1,19 +1,22 @@
-import Head from "next/head";
-import { motion, AnimatePresence } from "framer-motion";
-import connectMongo from "../utils/connectMongo";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { brands } from "@fortawesome/fontawesome-svg-core/import.macro";
-import styles from "../styles/Home.module.css";
-import Modal from "../components/modal/modal";
-import { useState } from "react";
-const Project = require("../models/Project");
-import Nav from "../components/nav/nav";
+import Head from 'next/head';
+import { motion, AnimatePresence } from 'framer-motion';
+import connectMongo from '../utils/connectMongo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
+import styles from '../styles/Home.module.css';
+import Modal from '../components/modal/modal';
+import { useState } from 'react';
+const Project = require('../models/Project');
+import Nav from '../components/nav/nav';
+import Link from 'next/link';
 
 export const getStaticProps = async () => {
   await connectMongo();
-  console.log("Connected to Mongo 👍");
+  console.log('Connected to Mongo 👍');
   let projects = await Project.find().lean();
-  projects.forEach((project) => (project._id = project._id.toString()));
+  projects.forEach(
+    (project) => (project._id = project._id.toString())
+  );
   projects.sort((a, b) => a.order - b.order);
   return { props: { projects } };
 };
@@ -46,7 +49,7 @@ export default function Home({ projects }) {
               ease: [0, 0.71, 0.2, 1.01],
             },
             scale: {
-              type: "spring",
+              type: 'spring',
               damping: 10,
               stiffness: 70,
               restDelta: 0.001,
@@ -56,7 +59,9 @@ export default function Home({ projects }) {
         >
           <div className={styles.description}>
             <div className={styles.descriptionText}>
-              <span className={styles.hey}>Hey, I&apos;m Jamie 👋 </span>
+              <span className={styles.hey}>
+                Hey, I&apos;m Jamie 👋{' '}
+              </span>
               <br />
               I&apos;m a full-stack developer in Toronto.
             </div>
@@ -70,8 +75,8 @@ export default function Home({ projects }) {
                 whileTap={{ scale: 0.9 }}
               >
                 <a href="https://twitter.com/jamiepantling">
-                  {" "}
-                  <FontAwesomeIcon icon={brands("twitter")} />
+                  {' '}
+                  <FontAwesomeIcon icon={brands('twitter')} />
                 </a>
               </motion.div>
               <motion.div
@@ -80,7 +85,7 @@ export default function Home({ projects }) {
                 whileTap={{ scale: 0.9 }}
               >
                 <a href="https://linkedin.com/in/jamie-pantling">
-                  <FontAwesomeIcon icon={brands("linkedin")} />
+                  <FontAwesomeIcon icon={brands('linkedin')} />
                 </a>
               </motion.div>
               <motion.div
@@ -89,72 +94,95 @@ export default function Home({ projects }) {
                 whileTap={{ scale: 0.9 }}
               >
                 <a href="https://github.com/jamiepantling">
-                  <FontAwesomeIcon icon={brands("github")} />
+                  <FontAwesomeIcon icon={brands('github')} />
                 </a>
               </motion.div>
             </div>
           </div>
         </motion.div>
-        <h2 className={styles.subtitle}>I built:</h2>
 
         <div className={styles.grid}>
-          {projects.map((project) => {
-            return (
-              <div key={project.order}>
-                <motion.div
-                  layout
-                  className={`${styles.card} ${styles.motion}`}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.1,
-                    ease: [0, 0.71, 0.2, 1.01],
-                  }}
-                  style={{}}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.9 }}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setModalProps({
-                      name: `${project.name}`,
-                      longDescription: `${project.longDescription}`,
-                      url: `${project.url}`,
-                      deployedUrl: `${project.deployedUrl}`,
-                      techs: `${project.techs}`,
-                      style: `${project.style}`,
-                      font: `${project.font}`,
-                    });
-                    setShowModal(true);
-                  }}
+          <h2 className={styles.subtitle}>I built:</h2>
+          <div className={styles.gridSubcontainer}>
+            {projects.map((project) => {
+              return (
+                <div
+                  key={project.order}
+                  className={styles.cardContainer}
                 >
-                  <h2>
-                    <span style={{ fontFamily: `${project.font}` }}>
-                      {project.name}
-                    </span>
-                  </h2>
-                  <p>{project.description}</p>
-                  <br />
-                  <p className={styles.technologies}>{project.techs}</p>
-                </motion.div>
-                <AnimatePresence>
-                  {showModal && (
-                    <Modal
-                      key="modal"
-                      onClose={() => setShowModal(false)}
-                      name={modalProps.name}
-                      longDescription={modalProps.longDescription}
-                      url={modalProps.url}
-                      deployedUrl={modalProps.deployedUrl}
-                      techs={modalProps.techs}
-                      style={modalProps.style}
-                      font={modalProps.font}
-                    />
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+                  <motion.div
+                    layout
+                    className={`${styles.card} ${styles.motion}`}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.1,
+                      ease: [0, 0.71, 0.2, 1.01],
+                    }}
+                    style={{}}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setModalProps({
+                        name: `${project.name}`,
+                        longDescription: `${project.longDescription}`,
+                        url: `${project.url}`,
+                        deployedUrl: `${project.deployedUrl}`,
+                        techs: `${project.techs}`,
+                        style: `${project.style}`,
+                        font: `${project.font}`,
+                      });
+                      setShowModal(true);
+                    }}
+                  >
+                    <div className="cardTitleDescContainer">
+                      <h2>
+                        <span
+                          style={{ fontFamily: `${project.font}` }}
+                        >
+                          {project.name}
+                        </span>
+                      </h2>
+                      <p>{project.description}</p>
+                    </div>
+                    <p className={styles.technologies}>
+                      {project.techs}
+                    </p>
+                  </motion.div>
+                  <AnimatePresence>
+                    {showModal && (
+                      <Modal
+                        key="modal"
+                        onClose={() => setShowModal(false)}
+                        name={modalProps.name}
+                        longDescription={modalProps.longDescription}
+                        url={modalProps.url}
+                        deployedUrl={modalProps.deployedUrl}
+                        techs={modalProps.techs}
+                        style={modalProps.style}
+                        font={modalProps.font}
+                      />
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div className={styles.moreInfo}>
+          <div>
+            I also make beautiful, user-centred Wordpress websites for
+            cultural non-profits with{' '}
+            <a href="https://surfaceimpression.digital">
+              Surface Impression
+            </a>
+            .
+          </div>
+          <Link className={styles.link} href={'/contact'}>
+            Get in touch
+          </Link>
         </div>
       </main>
     </div>

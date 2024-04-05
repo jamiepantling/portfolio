@@ -43,10 +43,6 @@ const Modal = (props) => {
   };
   const GameName = styled.span`
     font-family: ${props.font || 'cursive'};
-    font-size: ${props.style === 'sproutsweeper' ||
-    props.style === 'boredgame'
-      ? 'large'
-      : 'x-large'};
   `;
 
   const modalContent = (
@@ -61,7 +57,7 @@ const Modal = (props) => {
         duration: 0.2,
       }}
     >
-      <div className={styles.modalOverlay}>
+      <div className={styles.modalOverlay} data-game={props.style}>
         <div ref={modalWrapperRef} className={styles.modalWrapper}>
           <div className={styles.modal}>
             <div className={styles.modalHeader}>
