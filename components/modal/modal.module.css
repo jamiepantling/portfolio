@@ -12,6 +12,8 @@
   padding: 1.5rem;
   border: 2px solid var(--main-orange);
   min-height: 340px;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
 
 .modalBody {
