@@ -46,7 +46,7 @@
   /* padding: 0 0 2rem 0; */
   flex: 1;
   width: 100%;
-  min-width: 360px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,15 +192,14 @@
 .moreInfo {
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+
   gap: 10rem;
   justify-content: center;
   width: 100%;
-  padding-top: 10rem;
-  padding-bottom: 2rem;
   font-size: 1.5rem;
   max-width: 1200px;
   text-wrap: balance;
+  padding: 10rem 1rem 2rem 1rem;
 }
 .moreInfo div {
   text-align: center;
