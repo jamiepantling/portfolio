@@ -121,7 +121,7 @@ export default function Home({ projects }) {
                       ease: [0, 0.71, 0.2, 1.01],
                     }}
                     style={{}}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, zIndex: 1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={(e) => {
                       e.stopPropagation();

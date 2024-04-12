@@ -68,7 +68,7 @@ const Modal = (props) => {
                 </GameName>
               </div>
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, zIndex: 1000 }}
                 whileTap={{ scale: 0.9 }}
                 className={styles.x}
                 onClick={handleCloseClick}

@@ -16,12 +16,8 @@ export default function Nav() {
             </Link>
           </motion.div>
         </div>
-        <motion.div
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <Link href={'/contact'}>Get in touch</Link>
-        </motion.div>
+
+        <Link href={'/contact'}>Get in touch</Link>
       </div>
     </div>
   );
