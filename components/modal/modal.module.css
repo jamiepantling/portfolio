@@ -10,10 +10,9 @@
   width: 100%;
   border-radius: 5px;
   padding: 1.5rem;
-  border: 2px solid var(--main-orange);
+  border: 2px solid var(--main-pink);
   min-height: 340px;
   max-height: 80vh;
-  overflow-y: scroll;
 }
 
 .modalBody {
@@ -62,7 +61,7 @@
   font-size: large;
   cursor: pointer;
   color: white;
-  background-color: var(--main-orange);
+  background-color: var(--main-pink);
   border: 1px solid white;
   width: 24px;
   height: 24px;
@@ -127,11 +126,11 @@
 
 .githubButton {
   background-color: var(--base);
-  border: 2px solid var(--main-orange);
+  border: 2px solid var(--main-pink);
   color: black;
 }
 .githubButton:hover {
-  background-color: var(--main-orange);
+  background-color: var(--main-pink);
   color: var(--base);
 }
 .deployedButton {
@@ -156,6 +155,9 @@
   margin-bottom: 1.5rem;
 }
 @media (max-width: 900px) {
+  .modal {
+    overflow-y: scroll;
+  }
   .modalWrapper {
     min-width: 300px;
     padding: 0 1rem;
