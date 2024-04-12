@@ -71,7 +71,7 @@
   line-height: 1.15;
   font-size: 4rem;
   font-family: 'Jost', sans-serif;
-  color: #ee5401;
+  color: var(--lavender);
 }
 .subtitle {
   line-height: 1.15;
@@ -209,7 +209,12 @@
   text-decoration: underline;
   text-underline-position: under;
   text-underline-offset: 0.1em;
+  color: var(--main-orange);
 }
+.moreInfo a:hover {
+  text-decoration: none;
+}
+
 .moreInfo a[href='/contact'] {
   text-align: center;
   font-size: 1rem;

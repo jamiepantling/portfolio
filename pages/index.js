@@ -173,8 +173,8 @@ export default function Home({ projects }) {
         </div>
         <div className={styles.moreInfo}>
           <div>
-            I also make beautiful, user-centred Wordpress websites for
-            cultural non-profits with{' '}
+            I also make beautiful, user-centred Wordpress websites,
+            plugins and themes for cultural non-profits with{' '}
             <a href="https://surfaceimpression.digital">
               Surface Impression
             </a>

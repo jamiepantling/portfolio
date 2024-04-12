@@ -20,9 +20,7 @@ export default function Nav() {
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.9 }}
         >
-          <Link className={styles.link} href={'/contact'}>
-            Get in touch
-          </Link>
+          <Link href={'/contact'}>Get in touch</Link>
         </motion.div>
       </div>
     </div>

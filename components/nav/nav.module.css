@@ -24,15 +24,15 @@
   width: 100%;
 }
 
-.link {
+.navbar a {
   list-style-type: none;
   font-weight: 400;
   text-align: right;
   font-family: 'Jost', sans-serif;
-  font-size: x-large;
+  font-size: 1.5rem;
 }
 .title {
-  color: var(--main-orange);
+  color: var(--lavender);
   text-align: left;
   font-family: 'Jost', sans-serif;
   cursor: pointer;
