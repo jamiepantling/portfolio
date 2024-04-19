@@ -11,7 +11,7 @@ export default async (req, res) => {
         Message: ${body.message}
     `;
   const data = {
-    to: 'jamiepantling@gmail.com',
+    to: 'jamie@pantling.net',
     from: 'jamie@pantling.net',
     subject: `New message from ${body.name}`,
     text: message,
