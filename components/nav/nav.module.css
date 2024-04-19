@@ -15,11 +15,11 @@
 }
 .navbar {
   display: flex;
-  padding: 0 clamp(1rem, 5vw, 2rem);
+  padding: 0 clamp(1rem, 5vw, 2rem) 1rem clamp(1rem, 5vw, 2rem);
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-
+  flex-direction: column;
   color: var(--black);
   background-color: var(--base);
   width: 100%;
@@ -45,6 +45,10 @@
   font-family: 'Jost', sans-serif;
   cursor: pointer;
 }
-.titleContainer {
-  min-width: 240px;
+
+@media (min-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

@@ -9,6 +9,7 @@ import { useState } from 'react';
 const Project = require('../models/Project');
 import Nav from '../components/nav/nav';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const getStaticProps = async () => {
   await connectMongo();
@@ -59,15 +60,23 @@ export default function Home({ projects }) {
         >
           <div className={styles.description}>
             <div className={styles.descriptionText}>
-              <span className={styles.hey}>
-                Hey, I&apos;m Jamie 👋{' '}
-              </span>
+              <h2 className={styles.hey}>Hey, I&apos;m Jamie 👋 </h2>
               <br />
-              I&apos;m a full-stack developer in Toronto.
+              <p>
+                I&apos;m a full-stack developer
+                <br /> in Toronto.
+              </p>
             </div>
           </div>
           <div className={styles.picContainer}>
-            <img className={styles.image} src="/me.jpg" />
+            <Image
+              className={styles.image}
+              alt="Jamie Pantling"
+              src="/me.jpg"
+              height="300px"
+              width="300px"
+              priority
+            />
             <div className={styles.icons}>
               <motion.div
                 className={styles.twitter}
