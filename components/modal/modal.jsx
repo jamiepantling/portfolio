@@ -9,14 +9,23 @@ import {
   solid,
 } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-const Modal = (props) => {
+const Modal = ({
+  name,
+  longDescription,
+  url,
+  deployedUrl,
+  techs,
+  style,
+  font,
+  onClose,
+}) => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   const modalWrapperRef = React.useRef();
 
   const backDropHandler = (e) => {
     if (!modalWrapperRef?.current?.contains(e.target)) {
-      props.onClose();
+      onClose();
     }
   };
 
@@ -31,7 +40,7 @@ const Modal = (props) => {
   useEffect(() => {
     const close = (e) => {
       if (e.key === 'Escape') {
-        props.onClose();
+        onClose();
       }
     };
     window.addEventListener('keydown', close);
@@ -39,10 +48,10 @@ const Modal = (props) => {
   }, []);
   const handleCloseClick = (e) => {
     e.preventDefault();
-    props.onClose();
+    onClose();
   };
   const GameName = styled.span`
-    font-family: ${props.font || 'cursive'};
+    font-family: ${font || 'cursive'};
   `;
 
   const modalContent = (
@@ -57,15 +66,13 @@ const Modal = (props) => {
         duration: 0.2,
       }}
     >
-      <div className={styles.modalOverlay} data-game={props.style}>
+      <div className={styles.modalOverlay} data-game={style}>
         <div ref={modalWrapperRef} className={styles.modalWrapper}>
           <div className={styles.modal}>
             <div className={styles.modalHeader}>
               <div></div>
               <div className={styles.modalTitle}>
-                <GameName className={props.style}>
-                  {props.name}
-                </GameName>
+                <GameName className={style}>{name}</GameName>
               </div>
               <motion.button
                 whileHover={{ scale: 1.05, zIndex: 1000 }}
@@ -83,19 +90,19 @@ const Modal = (props) => {
                   <div className={styles.screenshot}>
                     <img
                       className={styles.image}
-                      src={`../../${props.style}.jpg`}
+                      src={`../../${style}.jpg`}
                     />
                   </div>
                   <div className={styles.descTechsContainer}>
                     <div className={styles.longDescription}>
-                      {props.longDescription}
+                      {longDescription}
                     </div>
-                    <div className={styles.techs}>{props.techs}</div>
+                    <div className={styles.techs}>{techs}</div>
                   </div>
                 </div>
 
                 <div className={styles.buttonContainer}>
-                  <a href={props.url}>
+                  <a href={url}>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.9 }}
@@ -105,15 +112,15 @@ const Modal = (props) => {
                       GitHub{' '}
                     </motion.button>
                   </a>
-                  {props.style == 'sproutsweeper' ||
-                  props.style == 'boredgame' ? (
-                    <a href={`${props.deployedUrl}`}>
+                  {style == 'sproutsweeper' ||
+                  style == 'boredgame' ? (
+                    <a href={`${deployedUrl}`}>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.9 }}
                         className={`${styles.deployedButton} ${styles.button}`}
                       >
-                        <GameName>{props.name}</GameName>
+                        <GameName>{name}</GameName>
                       </motion.button>
                     </a>
                   ) : null}
