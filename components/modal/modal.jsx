@@ -107,7 +107,7 @@ const Modal = (props) => {
                   </a>
                   {props.style == 'sproutsweeper' ||
                   props.style == 'boredgame' ? (
-                    <a href="https://sprout-sweeper.herokuapp.com/">
+                    <a href={`${props.deployedUrl}`}>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.9 }}
